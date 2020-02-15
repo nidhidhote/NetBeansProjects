@@ -7,14 +7,14 @@ package threaddemo;
 
 /**
  *
- * @author admin
+ * @author Nidhi 
  */
-class MyTask extends Thread{
+class MyTask extends Thread{//implementing thread using extends thread class
    //@override run method
     public void run()
     {
         for(int i=1;i<=5;i++)
-      System.out.println("Thread extended Action "+ i);  
+      System.out.println("Task 1 "+ i);  
     }
 
 }
@@ -25,11 +25,18 @@ public class ThreadDemo {
      */
     public static void main(String[] args) {
         //main thread 
-               MyTask mt=new MyTask();
-               mt.start();//start method invoked from java.lang.Thread allows to run jobs in a parallel manner
+              /* MyTask mt=new MyTask();
+               mt.start();*///start method invoked from java.lang.Thread allows to run jobs in a parallel manner
         	System.out.println("--Start--");
-                for(int i=1;i<=10;i++)
-		System.out.println("1 Action "+ i);
+                Printer p1=new Printer();
+                p1.printdocument(5,"NidhiDhote");
+                Runnable run=new UsagePrinter();
+                Thread up=new Thread(run);
+               
+                new Thread(new Printer1()).start(); 
+                up.start();
+               /* for(int i=1;i<=10;i++)
+		System.out.println("1 Action "+ i);*/
 		System.out.println("--End--");
                 
     }
