@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package treebstvalidation;
-import java.lang.Integer;
 /**
  *
  * @author admin
@@ -18,7 +17,8 @@ public class Node {
         left=right=null;
     }
     public boolean isBST(Node root){
-       boolean k=checkValidation(root,Integer.MIN_VALUE,Integer.MAX_VALUE);
+       boolean k=checkValidation(root,Integer.MIN_VALUE,Integer.MAX_VALUE);//add comment
+       
        return k;
     }
     public boolean checkValidation(Node root,int min,int max)
